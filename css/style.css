@@ -1,0 +1,426 @@
+/* UM Brand Tokens ───────────────────────────────────────── */
+/* # The UM Brand Tokens section was generated with Claude (Anthropic), March 9, 2026. Prompt: 'Follow the UM Style Guide PDF and create css code I can use throughout the entire stylesheet.' */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Merriweather:wght@400;700&display=swap');
+
+:root {
+    --um-blue: #00274C;
+    --um-maize: #FFCB05;
+    --um-white: #FFFFFF;
+    --um-puma-black: #131516;
+    --um-ash: #989C97;
+    --um-tan: #CFC096;
+    --um-teal: #00B2A9;
+    --um-red: #9A3324;
+
+    --font-sans: 'Montserrat', sans-serif;
+    --font-serif: 'Merriweather', serif;
+
+    --radius: 4px;
+    --max-w: 1200px;
+    --gap: 1.5rem;
+}
+
+/* Base Styles ───────────────────────────────────────────── */
+
+body {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--um-puma-black);
+    background: var(--um-white);
+}
+
+a {
+    color: var(--um-blue);
+    text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+    color: var(--um-red);
+}
+
+/* Skip to Main Content ──────────────────────────────────── */
+header>a:first-child {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    background: var(--um-maize);
+    color: var(--um-blue);
+    font-weight: 700;
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    z-index: 9999;
+    transition: top 0.2s;
+}
+
+header>a:first-child:focus {
+    top: 1rem;
+}
+
+/* Typography ────────────────────────────────────────────── */
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--um-blue);
+}
+
+h1 {
+    font-size: 2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+h4 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+ul,
+ol {
+    padding-left: 1.4rem;
+    /* margin-bottom: 1rem; */
+}
+
+li {
+    margin-bottom: 0.6rem;
+}
+
+strong {
+    font-weight: 700;
+}
+
+/* HEADER — Mobile ──────────────────────── */
+header {
+    background: var(--um-blue);
+    color: var(--um-white);
+    padding: 1rem;
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto;
+    column-gap: 1rem;
+    align-items: center;
+}
+
+header>a:first-child {
+    grid-row: 1;
+}
+
+header img {
+    grid-column: 1;
+    grid-row: 1;
+    width: 140px;
+}
+
+nav {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+
+/* NAVIGATION — Mobile ────────────────────────── */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+nav ul li a {
+    display: grid;
+    align-items: center;
+    color: var(--um-white);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.2rem 0.75rem;
+    border-radius: var(--radius);
+    border-left: 4px solid transparent;
+    min-height: 44px;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    background: rgba(255, 203, 5, 0.15);
+    color: var(--um-maize);
+    outline: 2px solid var(--um-maize);
+    outline-offset: 2px;
+}
+
+nav ul li a.active,
+nav ul li a[aria-current="page"] {
+    background: var(--um-blue);
+    color: var(--um-maize);
+    font-weight: 800;
+}
+
+/* MAIN ──────────────────────────────────────────────────── */
+main {
+    padding: 1.5rem 1rem 2rem;
+    max-width: var(--max-w);
+    margin-inline: auto;
+}
+
+/* SECTIONS ──────────────────────────────────────────────── */
+section {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--um-tan);
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+section>:last-child {
+    margin-bottom: 0;
+}
+
+/* IMAGES IN SECTIONS ─────────────────────────────────────── */
+section img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border: none;
+    border-radius: var(--radius);
+}
+
+/* IFRAME / VIDEO ────────────────────────────────────────── */
+iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border: none;
+    border-radius: var(--radius);
+    display: block;
+}
+
+/* RESOURCE LINK LISTS ─────────────────────────────────────── */
+section ul li a {
+    font-weight: 600;
+    font-size: 1.05rem;
+    display: inline-block;
+    min-height: 44px;
+}
+
+/* CTA LINKS ──────────────────────────────────── */
+section p a {
+    font-weight: 600;
+    display: inline-block;
+
+}
+
+/* TWO-COLUMN GRID ────────────────────────────────────────── */
+/* Used for: Early/Late stage (interviews.html)              */
+/*           Do's & Don'ts (network.html)                    */
+/* .two-col-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--gap);
+} */
+
+/* FOOTER ────────────────────────────────────────────────── */
+footer {
+    background: var(--um-blue);
+    color: var(--um-white);
+    padding: 1.5rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+footer a {
+    color: var(--um-maize);
+    font-weight: 600;
+    text-decoration: underline;
+    min-height: 44px;
+    display: inline-block;
+    padding: 0.25rem 0;
+}
+
+footer a:hover,
+footer a:focus {
+    color: var(--um-white);
+}
+
+/* FOCUS STATES (Accessibility) ──────────────────────────── */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--um-maize);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+/* TABLET VIEW (min-width: 768px) ──────────────────────────── */
+@media (min-width: 768px) {
+
+    /* HEADER: logo left | nav right */
+    header {
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto;
+        column-gap: 2rem;
+        align-items: center;
+        padding: 1rem 1.5rem;
+    }
+
+    header img {
+        grid-column: 1;
+        grid-row: 1;
+        width: 140px;
+    }
+
+    nav {
+        grid-column: 2;
+        grid-row: 1;
+        align-self: center;
+    }
+
+    /* NAV: all 4 links in one horizontal row, right-aligned */
+    nav ul {
+        grid-template-columns: repeat(4, auto);
+        justify-content: end;
+        gap: 0.25rem;
+    }
+
+    nav ul li a {
+        font-size: 0.95rem;
+        padding: 0.6rem 0.85rem;
+    }
+
+    /* MAIN: more horizontal breathing room */
+    main {
+        padding: 2rem 2rem 3rem;
+    }
+
+    /* TWO-COL GRID (interview preparation page) */
+    .two-col-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--gap);
+    }
+
+    /* FOOTER: a bit more padding on wider screens */
+    footer {
+        padding: 1.5rem 2rem;
+    }
+}
+
+/* DESKTOP VIEW (min-width: 1024px) ──────────────────────────── */
+@media (min-width: 1024px) {
+
+    /* HEADER: more padding, larger logo */
+    header {
+        padding: 1.25rem 2.5rem;
+        column-gap: 3rem;
+    }
+
+    header img {
+        width: 160px;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+        padding: 0.65rem 2rem;
+    }
+
+    /* TYPOGRAPHY: scale headings for larger canvas */
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.35rem;
+    }
+
+    /* MAIN: generous padding, full max-width benefit */
+    main {
+        padding: 2.5rem 3rem 4rem;
+    }
+
+    /* TWO-COL GRID (interview preparation page): wider gap on desktop */
+    .two-col-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+
+}
+
+
+/* 404 PAGE STYLES ──────────────────────────── */
+
+.error-404 main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-card {
+    text-align: center;
+    max-width: 900px;
+    padding: 4rem;
+    border: 1px solid var(--um-tan);
+    border-radius: var(--radius);
+    background: white;
+}
+
+.error-card h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.error-actions {
+    margin-top: 1.5rem;
+    display: grid;
+    gap: 0.75rem;
+}
+
+.error-actions a {
+    display: inline-block;
+    padding: 0.75rem 1rem;
+    background: var(--um-maize);
+    color: var(--um-blue);
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: var(--radius);
+}
+
+.error-actions a:hover,
+.error-actions a:focus {
+    background: var(--um-blue);
+    color: var(--um-maize);
+}
